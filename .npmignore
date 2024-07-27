@@ -3,3 +3,9 @@
 
 tsconfig.json
 tsup.config.ts
+/.github
+/.vscode
+/.changeset
+/.yarn
+/.storybook
+/src
