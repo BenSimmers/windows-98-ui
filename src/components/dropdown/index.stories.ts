@@ -9,7 +9,6 @@ const meta: Meta<typeof Dropdown> = {
   },
   tags: ["autodocs"],
   argTypes: {
-    label: { control: "text" },
     className: { control: "text" },
     options: { control: "object" },
   },
@@ -21,7 +20,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Dropdown",
     options: [
       { value: "5", label: "5 - Incredible!" },
       { value: "4", label: "4 - Great!" },

@@ -13,7 +13,6 @@ import React from 'react';
 type Options = Record<string, string>[];
 
 export type DropdownProps = PolymorphicComponentPropsWithRef<"select", {
-  label: string;
   className?: string;
   options: Options;
 
@@ -21,7 +20,6 @@ export type DropdownProps = PolymorphicComponentPropsWithRef<"select", {
 
 export const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(({
   as: Component = "select",
-  label,
   className,
   options,
   ...props
