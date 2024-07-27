@@ -2,7 +2,7 @@
   "name": "windows-98-ui",
   "version": "1.0.0",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "private": false,
   "publishConfig": {
@@ -19,7 +19,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
-  "author": "",
+  "author": "Benjamin Simmers",
   "license": "ISC",
   "description": "",
   "dependencies": {
