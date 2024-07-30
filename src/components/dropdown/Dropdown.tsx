@@ -1,14 +1,5 @@
-{/* <select>
-  <option>5 - Incredible!</option>
-  <option>4 - Great!</option>
-  <option>3 - Pretty good</option>
-  <option>2 - Not so great</option>
-  <option>1 - Unfortunate</option>
-</select> */}
-
 import { PolymorphicComponentPropsWithRef } from '@/types';
 import React from 'react';
-
 
 type Options = Record<string, string>[];
 
@@ -37,6 +28,4 @@ export const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(({
   );
 });
 
-
 Dropdown.displayName = "Dropdown";
-

@@ -1,8 +1,17 @@
 import React from 'react';
 
+/**
+ * A type that represents the props of a component.
+ * This is useful for extracting the props of a component
+ * so that they can be used in other components.
+ */
 export type PropsOf<C extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>> =
   JSX.LibraryManagedAttributes<C, React.ComponentPropsWithoutRef<C>>;
 
+/**
+ * A type that represents a prop that can be used to override the default HTML tag.
+ * This is useful for components that need to render a different HTML tag.
+ */
 type AsProp<C extends React.ElementType> = {
   /**
    * An override of the default HTML tag.
