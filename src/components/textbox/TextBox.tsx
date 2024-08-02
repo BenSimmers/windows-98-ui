@@ -10,7 +10,6 @@ type TextBoxProps<T> = PolymorphicComponentPropsWithRef<
     type: string;
     stacked?: boolean;
   }
-
 >;
 
 export const TextBox = React.forwardRef<HTMLInputElement, TextBoxProps<string>>(
