@@ -1,12 +1,16 @@
-import { PolymorphicComponentPropsWithRef } from '@/types';
 import React from 'react';
+import { PolymorphicComponentPropsWithRef } from '@/types';
 
-type Options = Record<string, string>[];
+type Option = {
+  value: string;
+  label: string;
+};
+
+type Options = Option[];
 
 export type DropdownProps = PolymorphicComponentPropsWithRef<"select", {
   className?: string;
   options: Options;
-
 }>;
 
 export const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(({
@@ -21,8 +25,10 @@ export const Dropdown = React.forwardRef<HTMLSelectElement, DropdownProps>(({
       className={className}
       {...props}
     >
-      {options.map(({ value, label }) => (
-        <option key={value} value={value}>{label}</option>
+      {options.map(option => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
       ))}
     </Component>
   );
