@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.1.2
+
+### Patch Changes
+
+- c8bbd11: fix options type
+
 ## 1.1.1
 
 ### Patch Changes
