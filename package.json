@@ -18,7 +18,16 @@
     "build-storybook": "storybook build",
     "deploy-storybook": "storybook-to-ghpages"
   },
-  "keywords": [],
+  "keywords": [
+    "windows",
+    "98",
+    "ui",
+    "react",
+    "component",
+    "library",
+    "web",
+    "typescript"
+  ],
   "author": "Benjamin Simmers",
   "license": "ISC",
   "description": "",

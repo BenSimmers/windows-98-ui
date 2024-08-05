@@ -14,7 +14,7 @@ windows-98-ui is a collection of React components that can be used to build a Wi
 
 e.g. we use a the `as` prop to override the default HTML tag of a component.
 
-````jsx
+```jsx
 import { TextBox } from 'windows-98-ui';
 <TextBox
   as="input"
@@ -36,7 +36,7 @@ import { TextBox } from 'windows-98-ui';
   stacked={true}
   type="text"
 />
-
+```
 ### Button
 
 The Button component is a simple button that can be used to trigger an action. The windows-98-ui library provides a Button component which extends the native button element. The Button component can be used to create a button with a label and a disabled state.
