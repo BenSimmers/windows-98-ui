@@ -34,13 +34,12 @@ type SliderProps = PolymorphicComponentPropsWithRef<
     value: string;
     step?: string;
     vertical?: boolean;
-    hasBoxIndicator?: boolean;
   }
 >;
 
 export const Slider = React.forwardRef<HTMLInputElement, SliderProps>(
   (
-    { as: Component = 'input', className, label, id, min, max, value, step, vertical, hasBoxIndicator, ...props },
+    { as: Component = 'input', className, label, id, min, max, value, step, vertical, ...props },
     ref,
   ) => {
     return (
