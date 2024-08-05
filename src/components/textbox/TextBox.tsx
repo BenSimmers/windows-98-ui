@@ -22,3 +22,5 @@ export const TextBox = React.forwardRef<HTMLInputElement, TextBoxProps<string>>(
     );
   },
 );
+
+TextBox.displayName = 'TextBox';
