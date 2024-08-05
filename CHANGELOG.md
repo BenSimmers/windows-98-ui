@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.2.0
+
+### Minor Changes
+
+- 1006db1: Add Slider and update documentation
+
 ## 1.1.2
 
 ### Patch Changes
