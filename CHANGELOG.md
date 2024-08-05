@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.2.1
+
+### Patch Changes
+
+- 2a7a2d0: update docs
+
 ## 1.2.0
 
 ### Minor Changes
