@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.3.1
+
+### Patch Changes
+
+- b225467: add conditional label for textbox
+
 ## 1.3.0
 
 ### Minor Changes
