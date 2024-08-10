@@ -3,7 +3,7 @@ name: Build and Publish Storybook to GitHub Pages
 on:
   push:
     branches:
-      - 'main' # Replace with the branch you want to deploy from
+      - 'main' 
 
 permissions:
   contents: read
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '18.x'  
 
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
