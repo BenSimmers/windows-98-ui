@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.3.0
+
+### Minor Changes
+
+- bc67e75: add titlebar component
+
 ## 1.2.1
 
 ### Patch Changes
