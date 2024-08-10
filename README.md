@@ -2,10 +2,28 @@
 
 React component library inspired by and using the css from [98.css](https://github.com/jdan/98.css) library for vanilla html
 
+## View Components
+
+You can view the components using this storybook [link].(https://bensimmers.github.io/windows-98-ui/)
+
 ## Installation
 
 ```bash
 npm install windows-98-ui
+```
+
+## Local Development
+
+```bash
+git clone <repo>
+```
+
+```bash
+cd windows-98-ui
+```
+
+```bash
+npm install
 ```
 
 ## Usage
@@ -37,6 +55,7 @@ import { TextBox } from 'windows-98-ui';
   type="text"
 />
 ```
+
 ### Button
 
 The Button component is a simple button that can be used to trigger an action. The windows-98-ui library provides a Button component which extends the native button element. The Button component can be used to create a button with a label and a disabled state.
@@ -49,7 +68,7 @@ import { Button } from 'windows-98-ui';
 
 // Disabled
 <Button label="Disabled" disabled={true} />
-````
+```
 
 ### Dropdown
 
