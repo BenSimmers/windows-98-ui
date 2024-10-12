@@ -1,0 +1,1 @@
+export { WindowBody } from "./windowBody";
