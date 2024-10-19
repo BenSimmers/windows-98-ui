@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.4.0
+
+### Minor Changes
+
+- 70375f9: create window/container-components
+
 ## 1.3.1
 
 ### Patch Changes
