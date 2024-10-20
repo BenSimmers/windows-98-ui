@@ -1,5 +1,15 @@
 # windows-98-ui
 
+## 1.5.0
+
+### Minor Changes
+
+- 0dfec40: create checkbox component and update dependencies
+
+### Patch Changes
+
+- e4045e2: fix issues with the slider component
+
 ## 1.4.1
 
 ### Patch Changes
