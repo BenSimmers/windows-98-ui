@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.4.1
+
+### Patch Changes
+
+- 3c5ce3b: export window components correctly
+
 ## 1.4.0
 
 ### Minor Changes
