@@ -6,3 +6,4 @@ export { Slider } from './components/slider';
 export { TitleBar } from './components/titleBar';
 export { Window } from './components/window/windowContainer';
 export { WindowBody } from './components/window/windowBody';
+export { Desktop } from './components/prefabs/Desktop';
