@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Window } from '.';
+import { WindowBody } from '.';
 
-const meta: Meta<typeof Window> = {
-  title: 'Example/Window',
-  component: Window,
+const meta: Meta<typeof WindowBody> = {
+  title: 'Example/WindowBody',
+  component: WindowBody,
   parameters: {
     layout: 'centered',
   },
@@ -20,5 +20,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     className: "",
+    as: "div"
   },
-};
+
+  render: (args) => <WindowBody {...args} />,
+  
+}

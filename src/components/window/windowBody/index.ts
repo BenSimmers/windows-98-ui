@@ -1,1 +1,1 @@
-export { WindowBody } from "./windowBody";
+export { WindowBody, type WidnowBodyProps } from './windowBody';

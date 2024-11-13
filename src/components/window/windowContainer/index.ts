@@ -1,1 +1,1 @@
-export { Window } from "./windowContainer";
+export { Window, type WindowProps } from "./windowContainer";

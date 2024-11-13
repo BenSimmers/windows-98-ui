@@ -1,7 +1,7 @@
 import { PolymorphicComponentPropsWithRef } from "@/types";
 import React from "react";
 
-type WidnowBodyProps = PolymorphicComponentPropsWithRef<'div', { className?: string }>;
+export type WidnowBodyProps = PolymorphicComponentPropsWithRef<'div', { className?: string }>;
 
 export const WindowBody = React.forwardRef<HTMLDivElement, WidnowBodyProps>(
   ({ as: Component = 'div', className, children, ...props }, ref) => {

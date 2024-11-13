@@ -1,7 +1,7 @@
 import { PolymorphicComponentProps } from '@/types';
 import React from 'react';
 
-type TitleBarProps = PolymorphicComponentProps<
+export type TitleBarProps = PolymorphicComponentProps<
   'div',
   {
     className?: string;

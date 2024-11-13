@@ -53,6 +53,8 @@ export const CheckedAndDisabled: Story = {
     label: 'I am inactive but still checked',
     id: 'example3',
   },
+
+  render: (args) => <CheckBox {...args} />,
 };
 
 export const Default: Story = {
@@ -62,4 +64,6 @@ export const Default: Story = {
     label: 'I am inactive but still checked',
     id: 'example4',
   },
+
+  render: (args) => <CheckBox {...args} />,
 };
