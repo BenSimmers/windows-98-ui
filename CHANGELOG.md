@@ -1,5 +1,16 @@
 # windows-98-ui
 
+## 1.6.0
+
+### Minor Changes
+
+- 7bc73e2: create desktop prefab component
+
+### Patch Changes
+
+- 57ced72: update storybook files and fix slider in storybook
+- c147bff: add onclick events to action buttons for title bar component
+
 ## 1.5.0
 
 ### Minor Changes
