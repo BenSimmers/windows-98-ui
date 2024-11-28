@@ -50,6 +50,10 @@ npm install
 npm start
 ```
 
+## Chasnge Log
+
+See the [CHANGELOG.md](CHANGELOG.md) file for details.
+
 ## Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
