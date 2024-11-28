@@ -1,6 +1,6 @@
 {
   "name": "windows-98-ui",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "storybook-to-ghpages",
-    "clean" : "rm -rf dist && rm -rf node_modules"
+    "clean": "rm -rf dist && rm -rf node_modules"
   },
   "keywords": [
     "windows",
