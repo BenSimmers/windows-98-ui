@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.6.1
+
+### Patch Changes
+
+- 8ebdef3: update package dependencies
+
 ## 1.6.0
 
 ### Minor Changes
