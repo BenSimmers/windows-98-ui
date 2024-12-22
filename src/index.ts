@@ -7,3 +7,4 @@ export { TitleBar } from './components/titleBar';
 export { Window } from './components/window/windowContainer';
 export { WindowBody } from './components/window/windowBody';
 export { Desktop } from './components/prefabs/Desktop';
+export { TreeView } from './components/treeView';
