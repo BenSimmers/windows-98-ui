@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.7.0
+
+### Minor Changes
+
+- 8474fdc: create tree view component
+
 ## 1.6.1
 
 ### Patch Changes
