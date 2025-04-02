@@ -1,18 +1,7 @@
-name: Deploy to GitHub Pages
-
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -30,14 +19,14 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Debug - List Files in Storybook Directory
+      - name: Debug - Verify Storybook Output
         run: ls -la ./storybook-static
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./storybook-static"
-          name: github-pages  # ✅ Ensure the artifact name matches
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         id: deployment
