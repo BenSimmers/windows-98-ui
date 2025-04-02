@@ -31,14 +31,14 @@ jobs:
         run: npm run build-storybook
 
       - name: Debug - List Files in Storybook Directory
-        run: ls -la ./storybook-static  # 🛠 Check if the folder exists
+        run: ls -la ./storybook-static
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "./storybook-static"
           name: github-pages  # ✅ Ensure the artifact name matches
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
