@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.8.0
+
+### Minor Changes
+
+- db4dbfd: feature: add a new Progress bar component
+
 ## 1.7.0
 
 ### Minor Changes
