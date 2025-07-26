@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.9.0
+
+### Minor Changes
+
+- 137876a: updates to progress
+
 ## 1.8.0
 
 ### Minor Changes
