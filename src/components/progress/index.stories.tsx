@@ -10,18 +10,27 @@ const meta: Meta<typeof Progress> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: ['default', 'segmented'],
+      options: ['', 'segmented'], // Correct options
       control: { type: 'select' },
+      mapping: {
+        '': '',
+        segmented: 'segmented',
+      },
+      labels: {
+        '': 'default',
+        segmented: 'segmented',
+      },
     },
-    value: { control: 'number' },
+    value: { control: { type: 'number', min: 0, max: 100 } },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
 export const Default: Story = {
   args: {
-    variant: 'default',
+    variant: '', // must match actual class logic
     value: 50,
   },
   render: (args) => <Progress {...args} />,
