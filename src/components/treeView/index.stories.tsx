@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TreeView } from '.';
 
 const meta: Meta<typeof TreeView> = {

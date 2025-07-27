@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 import '98.css'; // Ensure 98.css is imported globally
 const preview: Preview = {
   parameters: {

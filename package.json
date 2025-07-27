@@ -36,30 +36,29 @@
     "@changesets/cli": "^2.27.10",
     "98.css": "^0.1.20",
     "prettier": "^3.4.1",
-    "react": "^16.0 || ^17.0 || ^18.0 || ^19.0",
-    "react-dom": "^16.0 || ^17.0 || ^18.0 || ^19.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^2.0.2",
-    "@storybook/addon-essentials": "^8.4.5",
-    "@storybook/addon-interactions": "^8.4.5",
-    "@storybook/addon-links": "^8.4.5",
-    "@storybook/addon-onboarding": "^8.4.5",
-    "@storybook/blocks": "^8.4.5",
-    "@storybook/react": "^8.4.5",
-    "@storybook/react-vite": "^8.4.5",
-    "@storybook/test": "^8.4.5",
-    "@storybook/theming": "^8.4.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@chromatic-com/storybook": "^4.0.1",
+    "@storybook/addon-links": "^9.0.18",
+    "@storybook/addon-onboarding": "^9.0.18",
+    "@storybook/react-vite": "^9.0.18",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.9",
-    "eslint-plugin-storybook": "^0.9.0",
+    "eslint-plugin-storybook": "^9.0.18",
     "gh-pages": "^6.1.1",
-    "storybook": "^8.4.5"
+    "storybook": "^9.0.18",
+    "@storybook/addon-docs": "^9.0.18"
+  },
+  "peerDependencies": {
+    "react": "^16.0 || ^17.0 || ^18.0 || ^19.0",
+    "react-dom": "^16.0 || ^17.0 || ^18.0 || ^19.0"
   }
 }
