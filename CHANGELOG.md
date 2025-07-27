@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.9.2
+
+### Patch Changes
+
+- d80e6e7: update dependencies and migrate storybook
+
 ## 1.9.1
 
 ### Patch Changes
