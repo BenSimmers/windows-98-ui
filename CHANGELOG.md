@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.9.1
+
+### Patch Changes
+
+- 0d85b8e: update deps to target multiple react versions
+
 ## 1.9.0
 
 ### Minor Changes
