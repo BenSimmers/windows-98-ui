@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
-import '98.css'; // Ensure 98.css is imported globally
+import { createElement } from 'react';
+import { Win98Provider } from '../src/components/provider';
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -10,7 +12,12 @@ const preview: Preview = {
     },
   },
 
+  decorators: [
+    (Story) => createElement(Win98Provider, null, createElement(Story)),
+  ],
+
   tags: ['autodocs']
 };
 
 export default preview;
+

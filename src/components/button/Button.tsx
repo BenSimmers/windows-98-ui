@@ -1,5 +1,4 @@
 import { forwardRef } from 'react';
-import "98.css";
 import { PolymorphicComponentPropsWithRef } from '@/types';
 
 

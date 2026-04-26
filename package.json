@@ -9,7 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup",
+    "build:css": "node scripts/generate-scoped-css.mjs",
+    "build": "npm run build:css && tsup",
     "dev": "tsup -d",
     "changeset": "changesets version",
     "release": "npm run build && changeset publish",
