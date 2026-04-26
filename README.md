@@ -22,22 +22,47 @@ npm install windows-98-ui
 
 ## Usage
 
-Here's a quick example of how to use the `Button` component:
+Wrap your components in `Win98Provider` to scope all 98.css styles. This prevents the Windows 98 styles from leaking into the rest of your app.
 
 ```jsx
-import React from 'react';
-import { Button } from 'windows-98-ui';
+import { Win98Provider, Button } from 'windows-98-ui';
 
 function App() {
   return (
-    <div>
-      <Button onClick={() => alert('Clicked!')}>Click Me</Button>
-    </div>
+    <Win98Provider>
+      <Button label="OK" />
+    </Win98Provider>
   );
 }
-
-export default App;
 ```
+
+`Win98Provider` renders a `<div class="win98">` container and injects the scoped styles into `<head>` when it mounts, removing them when it unmounts. You can place it at the top level of your app or around individual sections — only the content inside will be styled.
+
+### Optional className
+
+You can pass a `className` to the provider to style the container:
+
+```jsx
+<Win98Provider className="my-desktop">
+  <Button label="OK" />
+</Win98Provider>
+```
+
+### Available components
+
+| Component | Import |
+|-----------|--------|
+| `Button` | `import { Button } from 'windows-98-ui'` |
+| `CheckBox` | `import { CheckBox } from 'windows-98-ui'` |
+| `Dropdown` | `import { Dropdown } from 'windows-98-ui'` |
+| `TextBox` | `import { TextBox } from 'windows-98-ui'` |
+| `Slider` | `import { Slider } from 'windows-98-ui'` |
+| `TitleBar` | `import { TitleBar } from 'windows-98-ui'` |
+| `Window` | `import { Window } from 'windows-98-ui'` |
+| `WindowBody` | `import { WindowBody } from 'windows-98-ui'` |
+| `Desktop` | `import { Desktop } from 'windows-98-ui'` |
+| `TreeView` | `import { TreeView } from 'windows-98-ui'` |
+| `Progress` | `import { Progress } from 'windows-98-ui'` |
 
 ## Local Development
 

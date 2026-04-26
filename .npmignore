@@ -9,3 +9,5 @@ tsup.config.ts
 /.yarn
 /.storybook
 /src
+/docs
+/scripts
