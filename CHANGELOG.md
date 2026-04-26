@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.10.0
+
+### Minor Changes
+
+- c174077: fix css issues around style leakage into the users app and in the corresponding storybook app which is apart of this app. we now have a provider to handle this which will go in your app.
+
 ## 1.9.2
 
 ### Patch Changes
