@@ -10,14 +10,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Dependencies
         run: npm ci
@@ -25,15 +22,18 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Debug - Verify Storybook Output
-        run: ls -la ./storybook-static
-
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./storybook-static"
-          name: github-pages
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
