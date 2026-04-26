@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.10.1
+
+### Patch Changes
+
+- 8da2887: versioning on devtools
+
 ## 1.10.0
 
 ### Minor Changes
