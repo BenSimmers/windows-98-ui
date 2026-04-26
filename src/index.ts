@@ -9,3 +9,5 @@ export { WindowBody } from './components/window/windowBody';
 export { Desktop } from './components/prefabs/Desktop';
 export { TreeView } from './components/treeView';
 export { Progress } from './components/progress';
+export { Win98Provider } from './components/provider';
+export type { Win98ProviderProps } from './components/provider';
