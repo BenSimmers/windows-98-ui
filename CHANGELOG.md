@@ -1,5 +1,11 @@
 # windows-98-ui
 
+## 1.10.2
+
+### Patch Changes
+
+- ac2a99e: Fix rendering issues with the progress component
+
 ## 1.10.1
 
 ### Patch Changes
