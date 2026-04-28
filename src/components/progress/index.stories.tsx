@@ -5,12 +5,17 @@ const meta: Meta<typeof Progress> = {
   title: 'Example/Progress',
   component: Progress,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
+  decorators: [
+    (Story) => (
+      <Story />
+    ),
+  ],
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: ['', 'segmented'], // Correct options
+      options: ['', 'segmented'],
       control: { type: 'select' },
       mapping: {
         '': '',

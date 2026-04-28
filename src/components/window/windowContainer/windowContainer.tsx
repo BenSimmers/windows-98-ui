@@ -11,7 +11,7 @@ export const Window = React.forwardRef<HTMLDivElement, WindowProps>(
     return (
       <Component
         ref={ref}
-        className={`window ${className}`}
+        className={`window${className ? ` ${className}` : ''}`}
         {...props}
         style={{
           width: `${props.width}px`,
