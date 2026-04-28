@@ -6,7 +6,7 @@ export type WidnowBodyProps = PolymorphicComponentPropsWithRef<'div', { classNam
 export const WindowBody = React.forwardRef<HTMLDivElement, WidnowBodyProps>(
   ({ as: Component = 'div', className, children, ...props }, ref) => {
     return (
-      <Component ref={ref} className={`window-body ${className}`} {...props}>
+      <Component ref={ref} className={`window-body${className ? ` ${className}` : ''}`} {...props}>
         {children}
       </Component>
     );
