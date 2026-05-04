@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import { Slider } from '.';
-import { ChangeEvent, useState } from 'react';
-import React from 'react';
+import { ChangeEvent } from 'react';
+import { useArgs } from 'storybook/internal/preview-api';
 
 const meta: Meta<typeof Slider> = {
   title: 'Example/Slider',
@@ -36,16 +36,13 @@ export const Primary: Story = {
     maxLabel: '100',
   },
   render: (args) => {
-    const [sliderValue, setSliderValue] = useState(args.value);
-
-    const onChange = React.useCallback(
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setSliderValue(event.target.value);
-        args.value = event.target.value;
-      },
-      [args],
+    const [{ value }, updateArgs] = useArgs();
+    return (
+      <Slider
+        {...args}
+        value={value}
+        onChange={(event: ChangeEvent<HTMLInputElement>) => updateArgs({ value: Number(event.target.value) })}
+      />
     );
-
-    return <Slider {...args} value={sliderValue} onChange={onChange} />;
   },
 };

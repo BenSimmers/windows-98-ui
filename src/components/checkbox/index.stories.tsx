@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CheckBox } from '.';
+import { useArgs } from 'storybook/internal/preview-api';
 
 const meta: Meta<typeof CheckBox> = {
   title: 'Example/CheckBox',
@@ -7,6 +8,7 @@ const meta: Meta<typeof CheckBox> = {
   parameters: {
     layout: 'centered',
   },
+  decorators: [(Story) => <Story />],
   tags: ['autodocs'],
   argTypes: {
     checked: {
@@ -28,13 +30,19 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const InteractiveRender: Story['render'] = (args) => {
+  const [{ checked }, updateArgs] = useArgs();
+  return <CheckBox {...args} checked={checked} onChange={() => updateArgs({ checked: !checked })} />;
+};
+
 export const Checked: Story = {
   args: {
-    checked: true,
+    checked: false,
     disabled: false,
     label: 'I am checked',
     id: 'example1',
   },
+  render: InteractiveRender,
 };
 
 export const Disabled: Story = {
@@ -44,6 +52,7 @@ export const Disabled: Story = {
     label: 'I am inactive',
     id: 'example2',
   },
+  render: InteractiveRender,
 };
 
 export const CheckedAndDisabled: Story = {
@@ -53,8 +62,7 @@ export const CheckedAndDisabled: Story = {
     label: 'I am inactive but still checked',
     id: 'example3',
   },
-
-  render: (args) => <CheckBox {...args} />,
+  render: InteractiveRender,
 };
 
 export const Default: Story = {
@@ -64,6 +72,5 @@ export const Default: Story = {
     label: 'I am inactive but still checked',
     id: 'example4',
   },
-
-  render: (args) => <CheckBox {...args} />,
+  render: InteractiveRender,
 };
