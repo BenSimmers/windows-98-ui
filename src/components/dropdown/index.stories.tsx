@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Dropdown } from '.';
+import { useArgs } from 'storybook/internal/preview-api';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Example/Dropdown',
@@ -11,6 +12,7 @@ const meta: Meta<typeof Dropdown> = {
   argTypes: {
     className: { control: 'text' },
     options: { control: 'object' },
+    value: { control: 'text' },
   },
 };
 
@@ -20,6 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    value: '5',
     options: [
       { value: '5', label: '5 - Incredible!' },
       { value: '4', label: '4 - Great!' },
@@ -29,5 +32,8 @@ export const Primary: Story = {
     ],
   },
 
-  render: (args) => <Dropdown {...args} />,
+  render: (args) => {
+    const [{ value }, updateArgs] = useArgs();
+    return <Dropdown {...args} value={value} onChange={(e) => updateArgs({ value: e.target.value })} />;
+  },
 };
