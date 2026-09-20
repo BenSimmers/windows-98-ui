@@ -15,6 +15,8 @@ const SCOPE = '.win98';
 
 const cssPath = resolve(__dirname, '../node_modules/98.css/dist/98.css');
 const outPath = resolve(__dirname, '../src/styles/win98-scoped.ts');
+const cssOutPath = resolve(__dirname, '../src/styles/win98.css');
+const extrasPath = resolve(__dirname, '../src/styles/extras.css');
 
 const css = readFileSync(cssPath, 'utf-8');
 
@@ -37,6 +39,8 @@ const scopePlugin = () => ({
 scopePlugin.postcss = true;
 
 const result = await postcss([scopePlugin]).process(css, { from: cssPath });
+const extras = readFileSync(extrasPath, 'utf-8');
+const combined = `${result.css}\n${extras}`;
 
 mkdirSync(resolve(__dirname, '../src/styles'), { recursive: true });
 
@@ -44,8 +48,13 @@ writeFileSync(
   outPath,
   `// Auto-generated — do not edit manually.
 // Re-run \`npm run build:css\` to regenerate after updating 98.css.
-export const win98ScopedCSS: string = ${JSON.stringify(result.css)};
+export const win98ScopedCSS: string = ${JSON.stringify(combined)};
 `,
 );
 
-console.log(`Scoped CSS written to src/styles/win98-scoped.ts`);
+// Plain stylesheet for consumers who want zero-flash SSR: importing this in a
+// root layout ships the styles with the document instead of injecting them
+// during hydration, which is always a frame too late.
+writeFileSync(cssOutPath, `/* Auto-generated \u2014 do not edit manually. Re-run \`npm run build:css\`. */\n${combined}\n`);
+
+console.log(`Scoped CSS written to src/styles/win98-scoped.ts and src/styles/win98.css`);

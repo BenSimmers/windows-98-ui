@@ -1,1 +1,1 @@
-export { TextBox } from './TextBox';
+export { TextBox, type TextBoxProps } from './TextBox';

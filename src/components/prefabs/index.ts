@@ -1,1 +1,1 @@
-export { Desktop } from './Desktop';
+export { Desktop, type DesktopProps } from './Desktop';
