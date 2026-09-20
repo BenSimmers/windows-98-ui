@@ -1,7 +1,11 @@
-import { useEffect, type ReactNode } from 'react';
+import * as React from 'react';
+import type { ReactNode } from 'react';
 import { win98ScopedCSS } from '../../styles/win98-scoped';
 
 const STYLE_ID = 'win98-scoped-styles';
+
+const useStyleInsertionEffect =
+  React.useInsertionEffect ?? (typeof document !== 'undefined' ? React.useLayoutEffect : React.useEffect);
 
 export type Win98ProviderProps = {
   children: ReactNode;
@@ -19,7 +23,7 @@ export type Win98ProviderProps = {
  * </Win98Provider>
  */
 export function Win98Provider({ children, className }: Win98ProviderProps) {
-  useEffect(() => {
+  useStyleInsertionEffect(() => {
     const existing = document.getElementById(STYLE_ID);
     if (existing) {
       const count = Number(existing.dataset.count ?? 0);
@@ -44,9 +48,5 @@ export function Win98Provider({ children, className }: Win98ProviderProps) {
     };
   }, []);
 
-  return (
-    <div className={`win98${className ? ` ${className}` : ''}`}>
-      {children}
-    </div>
-  );
+  return <div className={`win98${className ? ` ${className}` : ''}`}>{children}</div>;
 }

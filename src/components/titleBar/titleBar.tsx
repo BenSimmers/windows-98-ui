@@ -34,7 +34,7 @@ export const TitleBar = React.forwardRef<HTMLDivElement, TitleBarProps>(
     ref,
   ) => {
     return (
-      <Component ref={ref} className={`title-bar ${inactive ? 'inactive' : ''} ${className || ''}`} {...props}>
+      <Component ref={ref} className={`title-bar${inactive ? ' inactive' : ''}${className ? ` ${className}` : ''}`} {...props}>
         <div className="title-bar-text">{title}</div>
         <div className="title-bar-controls">
           {minimize && <button aria-label="Minimize" onClick={onMinimize}></button>}

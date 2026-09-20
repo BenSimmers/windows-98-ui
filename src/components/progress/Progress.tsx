@@ -12,6 +12,10 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
 
     return (
       <div
+        role="progressbar"
+        aria-valuenow={width}
+        aria-valuemin={0}
+        aria-valuemax={100}
         {...props}
         ref={ref}
         className={`progress-indicator${variant ? ` ${variant}` : ''}${className ? ` ${className}` : ''}`}

@@ -1,16 +1,40 @@
 {
   "name": "windows-98-ui",
   "version": "1.10.2",
+  "description": "A React component library that brings the nostalgic look and feel of Windows 98 to modern web apps, powered by 98.css. Typed, polymorphic, and style-scoped so it never leaks into the rest of your UI.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./style.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
   "private": false,
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenSimmers/windows-98-ui.git"
+  },
+  "homepage": "https://bensimmers.github.io/windows-98-ui/",
+  "bugs": {
+    "url": "https://github.com/BenSimmers/windows-98-ui/issues"
+  },
   "scripts": {
     "build:css": "node scripts/generate-scoped-css.mjs",
-    "build": "npm run build:css && tsup",
+    "build": "npm run build:css && tsup && npm run build:copy-css",
     "dev": "tsup -d",
     "changeset": "changesets version",
     "release": "npm run build && changeset publish",
@@ -18,45 +42,63 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "storybook-to-ghpages",
-    "clean": "rm -rf dist && rm -rf node_modules"
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "build:copy-css": "cp src/styles/win98.css dist/style.css",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "windows",
+    "windows-98",
     "98",
+    "98.css",
     "ui",
+    "ui-kit",
     "react",
+    "react-components",
     "component",
+    "component-library",
     "library",
+    "design-system",
+    "retro",
+    "nostalgia",
+    "skeuomorphic",
     "web",
     "typescript"
   ],
   "author": "Benjamin Simmers",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@changesets/cli": "^2.27.10",
-    "98.css": "^0.1.21",
-    "prettier": "^3.4.1",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2"
-  },
+  "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.10",
     "@chromatic-com/storybook": "^4.0.1",
+    "@storybook/addon-a11y": "^9.1.20",
     "@storybook/addon-docs": "^9.0.18",
     "@storybook/addon-links": "^9.0.18",
     "@storybook/addon-onboarding": "^9.0.18",
     "@storybook/react-vite": "^9.0.18",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^3.2.7",
+    "98.css": "^0.1.21",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-storybook": "^9.0.18",
     "gh-pages": "^6.1.1",
+    "jsdom": "^30.1.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "storybook": "^9.0.18"
+    "storybook": "^9.0.18",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.7"
   },
   "peerDependencies": {
     "react": "^16.0 || ^17.0 || ^18.0 || ^19.0",
@@ -64,5 +106,8 @@
   },
   "engines": {
     "node": ">=22.0.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

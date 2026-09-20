@@ -1,14 +1,27 @@
-import { PolymorphicComponentPropsWithRef } from "@/types";
-import React from "react";
+import { PolymorphicComponentPropsWithRef } from '@/types';
+import React from 'react';
+import { Slot } from '@/components/slot';
 
-export type WidnowBodyProps = PolymorphicComponentPropsWithRef<'div', { className?: string }>;
+export type WindowBodyProps = PolymorphicComponentPropsWithRef<
+  'div',
+  {
+    className?: string;
+    /** Merge these props onto the single child element instead of rendering a div. */
+    asChild?: boolean;
+  }
+>;
 
-export const WindowBody = React.forwardRef<HTMLDivElement, WidnowBodyProps>(
-  ({ as: Component = 'div', className, children, ...props }, ref) => {
+/** @deprecated Misspelled; use `WindowBodyProps`. Kept for backwards compatibility. */
+export type WidnowBodyProps = WindowBodyProps;
+
+export const WindowBody = React.forwardRef<HTMLDivElement, WindowBodyProps>(
+  ({ as: Component = 'div', asChild, className, children, ...props }, ref) => {
+    const Root = asChild ? Slot : Component;
+
     return (
-      <Component ref={ref} className={`window-body${className ? ` ${className}` : ''}`} {...props}>
+      <Root ref={ref} className={`window-body${className ? ` ${className}` : ''}`} {...props}>
         {children}
-      </Component>
+      </Root>
     );
   },
 );

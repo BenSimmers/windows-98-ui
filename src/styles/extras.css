@@ -1,0 +1,204 @@
+/*
+ * Styles for components 98.css does not cover: menus, dialogs, the taskbar
+ * and the start menu. Written pre-scoped under `.win98` so it can be appended
+ * to the generated stylesheet verbatim.
+ *
+ * Border idiom matches 98.css: nested inset box-shadows rather than borders.
+ */
+
+/* --- shared bevels ----------------------------------------------------- */
+.win98 .raised-panel {
+  background: silver;
+  box-shadow:
+    inset -1px -1px #0a0a0a,
+    inset 1px 1px #fff,
+    inset -2px -2px grey,
+    inset 2px 2px #dfdfdf;
+}
+
+/* --- menus -------------------------------------------------------------- */
+.win98 .menu-bar {
+  background: silver;
+  display: flex;
+  gap: 0;
+  padding: 1px 2px;
+}
+
+.win98 .menu-bar-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #222;
+  cursor: default;
+  font-family: 'Pixelated MS Sans Serif', Arial;
+  font-size: 11px;
+  min-height: 0;
+  min-width: 0;
+  padding: 2px 8px;
+}
+
+.win98 .menu-bar-item:hover:not(:disabled),
+.win98 .menu-bar-item[aria-expanded='true'] {
+  background: navy;
+  color: #fff;
+}
+
+.win98 .menu {
+  background: silver;
+  box-shadow:
+    inset -1px -1px #0a0a0a,
+    inset 1px 1px #fff,
+    inset -2px -2px grey,
+    inset 2px 2px #dfdfdf;
+  list-style: none;
+  margin: 0;
+  min-width: 140px;
+  padding: 2px;
+}
+
+/* Popover-API menus position themselves; the fallback is absolute. */
+.win98 .menu:popover-open {
+  border: none;
+  margin: 0;
+  padding: 2px;
+  position: absolute;
+}
+
+.win98 .menu-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #222;
+  cursor: default;
+  display: flex;
+  font-family: 'Pixelated MS Sans Serif', Arial;
+  font-size: 11px;
+  gap: 16px;
+  justify-content: space-between;
+  min-height: 0;
+  min-width: 0;
+  padding: 3px 20px 3px 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.win98 .menu-item:hover:not(:disabled),
+.win98 .menu-item:focus-visible {
+  background: navy;
+  color: #fff;
+  outline: none;
+}
+
+.win98 .menu-item:disabled {
+  color: grey;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.win98 .menu-item-shortcut {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.win98 .menu-separator {
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid grey;
+  height: 0;
+  margin: 3px 2px;
+  padding: 0;
+}
+
+/* --- dialog ------------------------------------------------------------- */
+.win98 dialog.window {
+  border: none;
+  color: #222;
+  padding: 3px;
+}
+
+.win98 dialog.window::backdrop {
+  background: rgb(0 0 0 / 25%);
+}
+
+/* --- taskbar ------------------------------------------------------------ */
+.win98 .taskbar {
+  align-items: center;
+  background: silver;
+  bottom: 0;
+  box-shadow: inset 0 1px #fff;
+  display: flex;
+  gap: 4px;
+  inset-inline: 0;
+  padding: 2px;
+  position: absolute;
+}
+
+.win98 .taskbar-items {
+  display: flex;
+  flex: 1;
+  gap: 3px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.win98 .taskbar-button {
+  flex: 0 1 160px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 6px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.win98 .taskbar-button.active {
+  box-shadow:
+    inset -1px -1px #fff,
+    inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf,
+    inset 2px 2px grey;
+  font-weight: bold;
+}
+
+.win98 .taskbar-start {
+  font-weight: bold;
+  min-width: 54px;
+  padding: 0 6px;
+}
+
+.win98 .taskbar-tray {
+  box-shadow:
+    inset -1px -1px #fff,
+    inset 1px 1px grey,
+    inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
+  font-size: 11px;
+  margin-left: auto;
+  padding: 2px 6px;
+}
+
+/* --- start menu --------------------------------------------------------- */
+.win98 .start-menu {
+  display: flex;
+  min-width: 180px;
+  padding: 2px;
+}
+
+.win98 .start-menu-banner {
+  background: linear-gradient(to top, navy, #1084d0);
+  color: #fff;
+  flex: 0 0 22px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 6px 2px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.win98 .start-menu-items {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
