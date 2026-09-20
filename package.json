@@ -1,6 +1,6 @@
 {
   "name": "windows-98-ui",
-  "version": "1.10.2",
+  "version": "1.11.0",
   "description": "A React component library that brings the nostalgic look and feel of Windows 98 to modern web apps, powered by 98.css. Typed, polymorphic, and style-scoped so it never leaks into the rest of your UI.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
